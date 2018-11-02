@@ -1,0 +1,20 @@
+spring:
+  application:
+    name: server-config
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/xfan/SpringcloudConfig/
+          searchPaths: respo
+          username: xfan
+          password: xfan
+      label: master
+
+## 通过负载均衡达到高可用配置，高可用配置中心需要将 configServer 和 configClient
+## 注册到服务中心，读取配置文件不再写 ip 地址，写服务名
+
+server:
+  port: 8888
+
+
